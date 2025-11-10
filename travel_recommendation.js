@@ -32,52 +32,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let results = [];
 
-    // Category keywords
-    if (query === "countries") {
+    // Only accept 'country', 'temple', 'beach'
+    if (query === "country") {
       travelData.countries?.forEach(country => {
         // Limit to first 2 cities per country
         country.cities?.slice(0, 2).forEach(city => {
           results.push(city);
         });
       });
-    } else if (query === "temples") {
+    } else if (query === "temple") {
       results = travelData.temples?.slice(0, 2) || [];
-    } else if (query === "beaches") {
+    } else if (query === "beach") {
       results = travelData.beaches?.slice(0, 2) || [];
     } else {
-      // Individual search
-      travelData.countries?.forEach(country => {
-        if (country.name.toLowerCase().includes(query)) {
-          // Limit to first 2 cities for country search
-          country.cities?.slice(0, 2).forEach(city => {
-            results.push(city);
-          });
-        }
-
-        country.cities?.forEach(city => {
-          if (city.name.toLowerCase().includes(query)) {
-            results.push(city);
-          }
-        });
-      });
-
-      travelData.temples?.forEach(temple => {
-        if (
-          temple.name.toLowerCase().includes(query) ||
-          temple.description.toLowerCase().includes(query)
-        ) {
-          results.push(temple);
-        }
-      });
-
-      travelData.beaches?.forEach(beach => {
-        if (
-          beach.name.toLowerCase().includes(query) ||
-          beach.description.toLowerCase().includes(query)
-        ) {
-          results.push(beach);
-        }
-      });
+      resultsDiv.innerHTML =
+        "<p>Invalid keyword! Use 'country', 'temple', or 'beach'.</p>";
+      return;
     }
 
     // Display results
