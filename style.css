@@ -8,6 +8,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+section {
+  padding-top: 100px; /* prevent navbar overlap */
+}
+
 /* ------------------------------
    NAVBAR
 ------------------------------ */
@@ -69,7 +73,7 @@
 .search-bar input {
   border: none;
   outline: none;
-  padding: 12px 12px;
+  padding: 12px;
   width: 220px;
   border-radius: 25px 0 0 25px;
 }
@@ -77,7 +81,7 @@
 .search-btn, .clear-btn {
   border: none;
   border-radius: 20px;
-  padding: 12px 12px;
+  padding: 12px;
   cursor: pointer;
   font-weight: 500;
 }
@@ -107,7 +111,7 @@
 ------------------------------ */
 .hero {
   position: relative;
-  height: 90vh;
+  min-height: 90vh;
   background-image: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
   background-position: center;
@@ -150,17 +154,17 @@
 }
 
 /* ------------------------------
-   SOCIAL ICONS (HOME + ABOUT)
+   SOCIAL ICONS
 ------------------------------ */
 .social-icons {
-  position: absolute;
+  position: fixed;
   top: 50%;
-  left: 40px;
+  left: 20px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 20px;
-  z-index: 1;
+  z-index: 999;
 }
 
 .social-icons a {
@@ -178,12 +182,9 @@
 ------------------------------ */
 .about-section {
   position: relative;
-  height: 90vh;
-  background-image: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1920&q=80');
-  background-size: cover;
-  background-position: center;
-  color: white;
   padding: 80px 100px;
+  background: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  color: white;
 }
 
 .overlay {
@@ -200,21 +201,7 @@
   max-width: 900px;
 }
 
-h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.intro {
-  font-size: 16px;
-  line-height: 1.6;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* TEAM SECTION */
+/* Team Section */
 .team-section {
   margin-top: 40px;
 }
@@ -257,26 +244,13 @@ h1 {
 }
 
 /* ------------------------------
-   CONTACT PAGE
+   CONTACT SECTION
 ------------------------------ */
 .contact-section {
   position: relative;
-  height: 100vh;
-  background: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad') no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 80px 100px;
+  background: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad') center/cover no-repeat;
   color: white;
-}
-
-.contact-section .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
 }
 
 .contact-container {
@@ -303,7 +277,6 @@ h1 {
   opacity: 0.9;
 }
 
-/* CONTACT FORM */
 .contact-right {
   flex: 1;
   background: rgba(255, 255, 255, 0.1);
@@ -345,12 +318,13 @@ h1 {
 .contact-form button:hover {
   background: #01956f;
 }
+
 /* ------------------------------
    SEARCH RESULTS OVERLAY
 ------------------------------ */
 .results-section {
-  position: absolute;
-  top: 90px; /* right below navbar */
+  position: fixed;
+  top: 80px; 
   left: 50%;
   transform: translateX(-50%);
   width: 85%;
@@ -358,32 +332,29 @@ h1 {
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   display: none;
-  flex-direction: column;   /* stack cards vertically */
-  align-items: center;      /* center horizontally */
-  gap: 20px;                /* space between cards */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   padding: 30px 20px;
-  z-index: 100;
+  z-index: 1000;
   max-height: 70vh;
   overflow-y: auto;
-  flex-wrap: nowrap;        /* no wrapping */
 }
 
 .result-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 90%;               /* make card almost full width */
-  max-width: 600px;         /* optional: max width */
+  width: 90%;
+  max-width: 600px;
   overflow: hidden;
   text-align: center;
   transition: all 0.3s ease;
 }
 
-
 .results-section.show-results {
   display: flex;
 }
-
 
 .result-card:hover {
   transform: translateY(-5px);
@@ -421,5 +392,3 @@ h1 {
   background-color: #ccc;
   border-radius: 5px;
 }
-
-

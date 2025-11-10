@@ -6,9 +6,7 @@
   <title>TravelBloom</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Replace the old one -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Navbar -->
@@ -18,9 +16,9 @@
         ✈️ <span>TravelBloom</span>
       </div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
       <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Enter a destination or keyword">
@@ -30,11 +28,19 @@
     </nav>
   </header>
 
+  <!-- Floating Social Icons -->
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <!-- Search Results Overlay -->
   <section id="results" class="results-section"></section>
 
-  <!-- Hero Section -->   
-  <section class="hero">
-    
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
     <div class="hero-content">
       <h1>EXPLORE<br>DREAM<br>DESTINATION</h1>
       <p>It encourages exploration of unfamiliar territories, embracing diverse cultures and landscapes, 
@@ -42,12 +48,64 @@
       <button class="book-btn">BOOK NOW</button>
     </div>
   </section>
-   <div class="social-icons">
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>ABOUT US</h1>
+      <p class="intro">
+        Welcome to <strong>Our Company!</strong> We are a team of passionate individuals dedicated to providing excellent services and products to our customers. 
+        Our mission is to provide the best experience for people traveling to different destinations around the world.  
+        <br><br>
+        Our values include integrity, innovation, customer satisfaction, and teamwork. We believe in putting our customers first and working together to achieve our goals.  
+        <br><br>
+        Explore our website to learn more about what we offer!
+      </p>
+
+      <div class="team-section">
+        <h2>Our Team</h2>
+        <div class="team-members">
+          <div class="member">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe">
+            <h3>John Doe</h3>
+            <p>CEO</p>
+          </div>
+          <div class="member">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Caitlin Thomas">
+            <h3>Caitlin Thomas</h3>
+            <p>Team Lead</p>
+          </div>
+          <div class="member">
+            <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Mike Tyson">
+            <h3>Mike Tyson</h3>
+            <p>Delivery Head</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="travel_recommendation.js"></script>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="overlay"></div>
+    <div class="contact-container">
+      <div class="contact-left">
+        <h1>CONTACT US</h1>
+        <p>Get in touch.</p>
+      </div>
+
+      <div class="contact-right">
+        <form class="contact-form">
+          <input type="text" placeholder="Name" name="name" required>
+          <input type="email" placeholder="Email" name="email" required>
+          <textarea placeholder="Message" name="message" rows="5" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="travel_recommendation.js"></script>
 </body>
 </html>
